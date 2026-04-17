@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>og</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Young+Serif&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html, body { margin: 0; padding: 0; }
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        color: oklch(0.22 0.018 180);
+        background:
+          linear-gradient(
+            to bottom,
+            oklch(0.94 0.035 82) 0%,
+            oklch(0.94 0.035 82) 58%,
+            oklch(0.58 0.11 220) 58%,
+            oklch(0.38 0.09 225) 100%
+          );
+        position: relative;
+      }
+      .sun {
+        position: absolute;
+        right: 96px;
+        top: 58%;
+        transform: translateY(-50%);
+        width: 320px;
+        height: 320px;
+        background: oklch(0.74 0.145 52);
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px oklch(0.56 0.11 45);
+      }
+      .sun::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        width: 22%;
+        height: 300px;
+        background: color-mix(in oklch, oklch(0.74 0.145 52) 55%, transparent);
+        filter: blur(1.5px);
+        border-radius: 2px;
+      }
+      .mark {
+        position: absolute;
+        left: 64px;
+        top: 64px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: oklch(0.74 0.145 52);
+      }
+      .mark span {
+        font-family: "Young Serif", serif;
+        font-size: 32px;
+        letter-spacing: -0.01em;
+      }
+      .headline {
+        position: absolute;
+        left: 64px;
+        top: 150px;
+        font-family: "Young Serif", serif;
+        font-size: 96px;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        color: oklch(0.22 0.018 180);
+        margin: 0;
+      }
+      .headline-b {
+        position: absolute;
+        left: 64px;
+        top: 402px;
+        font-family: "Young Serif", serif;
+        font-size: 96px;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        font-style: italic;
+        color: oklch(0.965 0.014 85);
+        margin: 0;
+      }
+      .sub {
+        position: absolute;
+        left: 64px;
+        bottom: 56px;
+        font-size: 18px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: oklch(0.965 0.014 85);
+        opacity: 0.92;
+      }
+      .coord {
+        position: absolute;
+        right: 64px;
+        top: 64px;
+        text-align: right;
+        font-size: 18px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: oklch(0.22 0.018 180);
+        opacity: 0.75;
+        line-height: 1.5;
+      }
+      .east {
+        position: absolute;
+        right: 64px;
+        bottom: 40px;
+        font-size: 16px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: oklch(0.965 0.014 85);
+        opacity: 0.85;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mark">
+      <span class="dot"></span>
+      <span>Vin&rsquo;s Clinic</span>
+    </div>
+    <div class="coord">
+      33°53&prime;S · 151°16&prime;E<br />
+      Bondi · NSW
+    </div>
+    <h1 class="headline">An<br />unhurried</h1>
+    <div class="headline-b">practice.</div>
+    <div class="sub">Dr Vinay Patel · By appointment · Bondi NSW</div>
+    <div class="sun"></div>
+    <div class="east">Looking east</div>
+  </body>
+</html>

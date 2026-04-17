@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OG previews</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; font-family: Inter, system-ui, sans-serif; }
+      body {
+        background: #edeef0;
+        padding: 48px;
+        color: #111;
+      }
+      h1 { font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; margin: 0 0 24px; color: #667; }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        max-width: 1440px;
+      }
+      .cell { }
+      .cell-title {
+        display: flex; align-items: center; gap: 8px;
+        font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #667;
+        margin-bottom: 12px;
+      }
+      .cell-title::before {
+        content: ""; display:inline-block; width: 8px; height:8px; border-radius: 2px; background: #c3c6cc;
+      }
+
+      /* ============ WhatsApp ============ */
+      .wa {
+        background: #e5ddd5;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .wa-bubble {
+        max-width: 360px;
+        background: #dcf8c6;
+        border-radius: 8px;
+        padding: 3px;
+        position: relative;
+        font-size: 14px;
+        color: #111b21;
+      }
+      .wa-bubble::after {
+        content:""; position:absolute; right: -6px; top: 0; width:0; height:0;
+        border: 6px solid transparent;
+        border-left-color: #dcf8c6; border-top-color: #dcf8c6;
+      }
+      .wa-link {
+        background: rgba(0,0,0,0.05);
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .wa-link img { width: 100%; display: block; }
+      .wa-link .txt { padding: 8px 10px 10px; }
+      .wa-link .title { font-size: 13px; font-weight: 600; line-height: 1.3; }
+      .wa-link .desc { font-size: 12px; line-height: 1.35; color: #667781; margin-top: 3px; }
+      .wa-link .domain { font-size: 12px; color: #667781; margin-top: 4px; }
+      .wa-msg { padding: 6px 10px 8px; font-size: 14px; color: #111b21; }
+      .wa-time { text-align: right; font-size: 11px; color: #667781; padding: 0 10px 4px; }
+
+      /* ============ iMessage ============ */
+      .im {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .im-wrap { max-width: 320px; margin-left: auto; }
+      .im-card {
+        background: #e9e9eb;
+        border-radius: 14px;
+        overflow: hidden;
+        font-size: 13px;
+        color: #000;
+      }
+      .im-card img { width: 100%; display: block; }
+      .im-card .txt { padding: 8px 12px 10px; }
+      .im-card .title { font-weight: 600; line-height: 1.25; font-size: 14px; }
+      .im-card .desc { color: #6c6c70; font-size: 12px; margin-top: 2px; line-height: 1.3; }
+      .im-card .domain { color: #6c6c70; font-size: 11px; margin-top: 5px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+      /* ============ Slack ============ */
+      .sl {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .sl-row {
+        display: grid;
+        grid-template-columns: 36px 1fr;
+        gap: 10px;
+        font-size: 14px;
+        color: #1d1c1d;
+      }
+      .sl-avatar {
+        width: 36px; height: 36px; border-radius: 4px; background: #1866a6; color: #fff;
+        display: grid; place-items: center; font-weight: 700;
+      }
+      .sl-head { display: flex; gap: 8px; align-items: baseline; }
+      .sl-name { font-weight: 700; }
+      .sl-time { font-size: 12px; color: #696969; }
+      .sl-msg { margin: 4px 0 8px; }
+      .sl-unfurl {
+        border-left: 3px solid #dddfe3;
+        padding-left: 12px;
+        max-width: 440px;
+      }
+      .sl-title { font-weight: 700; color: #1264a3; font-size: 14px; }
+      .sl-desc { color: #1d1c1d; font-size: 13px; margin-top: 4px; line-height: 1.4; }
+      .sl-img { margin-top: 8px; border-radius: 6px; overflow: hidden; }
+      .sl-img img { width: 100%; display: block; }
+
+      /* ============ Twitter ============ */
+      .tw {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .tw-row {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: 12px;
+        font-size: 15px;
+        color: #0f1419;
+      }
+      .tw-avatar {
+        width: 40px; height: 40px; border-radius: 999px;
+        background: linear-gradient(135deg, #e8833d 0%, #1866a6 100%);
+      }
+      .tw-head { display:flex; align-items:baseline; gap: 6px; font-size: 15px; }
+      .tw-name { font-weight: 700; }
+      .tw-handle { color: #536471; font-weight: 400; }
+      .tw-msg { margin: 4px 0 10px; line-height: 1.35; }
+      .tw-card {
+        border: 1px solid #cfd9de;
+        border-radius: 16px;
+        overflow: hidden;
+        max-width: 480px;
+      }
+      .tw-card img { width: 100%; display: block; }
+      .tw-card .txt { padding: 10px 12px; background: #fff; }
+      .tw-card .domain { color: #536471; font-size: 13px; }
+      .tw-card .title { font-size: 14px; line-height: 1.3; margin-top: 2px; }
+      .tw-card .desc { color: #536471; font-size: 13px; line-height: 1.35; margin-top: 2px; }
+
+      /* ============ LinkedIn ============ */
+      .li {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .li-wrap { max-width: 520px; }
+      .li-card {
+        border: 1px solid #e0dfdc;
+        border-radius: 2px;
+        overflow: hidden;
+        background: #fff;
+      }
+      .li-card img { width: 100%; display: block; }
+      .li-card .txt { padding: 10px 12px; background: #edf3f8; }
+      .li-card .title { font-weight: 600; font-size: 16px; color: #000; line-height: 1.3; }
+      .li-card .domain { color: #5c5c5c; font-size: 13px; margin-top: 4px; }
+
+      /* ============ Discord ============ */
+      .dc {
+        background: #313338;
+        padding: 20px;
+        border-radius: 10px;
+        color: #dbdee1;
+      }
+      .dc-row {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: 16px;
+        font-size: 15px;
+      }
+      .dc-avatar {
+        width: 40px; height: 40px; border-radius: 999px;
+        background: #5865f2;
+      }
+      .dc-head { display:flex; gap: 8px; align-items: baseline; }
+      .dc-name { font-weight: 600; color: #f2f3f5; }
+      .dc-time { font-size: 12px; color: #949ba4; }
+      .dc-msg { color: #dbdee1; margin-top: 2px; line-height: 1.35; }
+      .dc-link { color: #00a8fc; }
+      .dc-embed {
+        margin-top: 6px;
+        border-left: 4px solid #f2ece0;
+        background: #2b2d31;
+        border-radius: 4px;
+        padding: 12px 16px;
+        max-width: 480px;
+      }
+      .dc-embed .site { color: #949ba4; font-size: 12px; }
+      .dc-embed .title { color: #00a8fc; font-weight: 600; font-size: 16px; margin-top: 2px; }
+      .dc-embed .desc { color: #dbdee1; font-size: 14px; margin-top: 6px; line-height: 1.35; }
+      .dc-embed .img { margin-top: 10px; border-radius: 4px; overflow: hidden; }
+      .dc-embed img { width: 100%; display: block; }
+    </style>
+  </head>
+  <body>
+    <h1>Vin&rsquo;s Clinic — OG image rendered across platforms</h1>
+
+    <div class="grid">
+      <!-- WhatsApp -->
+      <div class="cell">
+        <div class="cell-title">WhatsApp</div>
+        <div class="wa">
+          <div class="wa-bubble">
+            <div class="wa-link">
+              <img src="og-image.jpg" alt="" />
+              <div class="txt">
+                <div class="title">Vin&rsquo;s Clinic, Bondi</div>
+                <div class="desc">
+                  An unhurried, appointment-based medical practice on
+                  the ocean side of Bondi. Dr Vinay Patel.
+                </div>
+                <div class="domain">vins.clinic</div>
+              </div>
+            </div>
+            <div class="wa-msg">have a look at this</div>
+            <div class="wa-time">9:41 am ✓✓</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- iMessage -->
+      <div class="cell">
+        <div class="cell-title">iMessage (iOS)</div>
+        <div class="im">
+          <div class="im-wrap">
+            <div class="im-card">
+              <img src="og-image.jpg" alt="" />
+              <div class="txt">
+                <div class="title">Vin&rsquo;s Clinic, Bondi</div>
+                <div class="desc">
+                  An unhurried, appointment-based medical practice on
+                  the ocean side of Bondi.
+                </div>
+                <div class="domain">VINS.CLINIC</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slack -->
+      <div class="cell">
+        <div class="cell-title">Slack</div>
+        <div class="sl">
+          <div class="sl-row">
+            <div class="sl-avatar">Z</div>
+            <div>
+              <div class="sl-head">
+                <span class="sl-name">Zain</span>
+                <span class="sl-time">9:41 AM</span>
+              </div>
+              <div class="sl-msg">
+                <a href="#" style="color:#1264a3;">https://vins.clinic</a>
+              </div>
+              <div class="sl-unfurl">
+                <div class="sl-title">Vin&rsquo;s Clinic, Bondi</div>
+                <div class="sl-desc">
+                  An unhurried, appointment-based medical practice on
+                  the ocean side of Bondi. Dr Vinay Patel.
+                </div>
+                <div class="sl-img"><img src="og-image.jpg" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Twitter / X -->
+      <div class="cell">
+        <div class="cell-title">X / Twitter</div>
+        <div class="tw">
+          <div class="tw-row">
+            <div class="tw-avatar"></div>
+            <div>
+              <div class="tw-head">
+                <span class="tw-name">Zain</span>
+                <span class="tw-handle">@zain · 5m</span>
+              </div>
+              <div class="tw-msg">new friend&rsquo;s clinic website — have a look</div>
+              <div class="tw-card">
+                <img src="og-image.jpg" alt="" />
+                <div class="txt">
+                  <div class="domain">vins.clinic</div>
+                  <div class="title">Vin&rsquo;s Clinic, Bondi</div>
+                  <div class="desc">
+                    An unhurried, appointment-based medical practice on
+                    the ocean side of Bondi.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LinkedIn -->
+      <div class="cell">
+        <div class="cell-title">LinkedIn</div>
+        <div class="li">
+          <div class="li-wrap">
+            <div class="li-card">
+              <img src="og-image.jpg" alt="" />
+              <div class="txt">
+                <div class="title">Vin&rsquo;s Clinic, Bondi</div>
+                <div class="domain">vins.clinic · 1 min read</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Discord -->
+      <div class="cell">
+        <div class="cell-title">Discord</div>
+        <div class="dc">
+          <div class="dc-row">
+            <div class="dc-avatar"></div>
+            <div>
+              <div class="dc-head">
+                <span class="dc-name">zain</span>
+                <span class="dc-time">Today at 9:41 AM</span>
+              </div>
+              <div class="dc-msg">
+                <a class="dc-link" href="#">https://vins.clinic</a>
+              </div>
+              <div class="dc-embed">
+                <div class="site">vins.clinic</div>
+                <div class="title">Vin&rsquo;s Clinic, Bondi</div>
+                <div class="desc">
+                  An unhurried, appointment-based medical practice on
+                  the ocean side of Bondi. Dr Vinay Patel.
+                </div>
+                <div class="img"><img src="og-image.jpg" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
