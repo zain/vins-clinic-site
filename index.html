@@ -6,7 +6,7 @@
     <title>Vin&rsquo;s Clinic, Bondi, an unhurried practice</title>
     <meta
       name="description"
-      content="An unhurried, appointment-based practice in Bondi Beach. Medicinal cannabis access, compounded therapeutics, and metabolic health with Dr Vinay Patel."
+      content="An unhurried, appointment-based practice in Bondi Beach. Functional and integrative medicine with Dr Vinay Patel."
     />
     <meta name="theme-color" content="#f2ece0" />
     <link rel="canonical" href="https://vins.clinic/" />
@@ -573,16 +573,27 @@
       .doctor-body .lede {
         margin-top: var(--s-5);
         font-size: var(--text-lg);
-        line-height: 1.5;
+        line-height: 1.45;
+        letter-spacing: -0.005em;
         color: var(--ink);
-        max-width: 48ch;
+        max-width: 46ch;
+        text-wrap: pretty;
       }
       .doctor-body .prose {
-        margin-top: var(--s-4);
+        margin-top: var(--s-6);
+        display: grid;
+        gap: var(--s-5);
         font-size: var(--text-base);
-        line-height: 1.7;
+        line-height: 1.65;
         color: var(--ink-muted);
         max-width: 56ch;
+        text-wrap: pretty;
+      }
+      .doctor-body .prose p {
+        hanging-punctuation: first last;
+      }
+      .doctor-body .prose p:first-child {
+        color: var(--ink);
       }
 
       .creds {
@@ -1251,8 +1262,8 @@
         </a>
         <nav class="nav-links" aria-label="Primary">
           <a href="#practice">Practice</a>
-          <a href="#doctor">The doctor</a>
           <a href="#services">Services</a>
+          <a href="#doctor">The doctor</a>
           <a href="#contact">Contact</a>
         </nav>
         <a href="#contact" class="btn">Request intake →</a>
@@ -1277,9 +1288,10 @@
             </h1>
             <p class="hero-lede reveal reveal-3">
               Vin&rsquo;s Clinic is a small, appointment-based medical
-              practice on the ocean side of Bondi. The work: medicinal
-              cannabis access, compounded therapeutics, and the daily
-              architecture of a body you plan to live in for a while.
+              practice on the ocean side of Bondi. The work: functional
+              and integrative medicine, root-cause assessment, and the
+              daily architecture of a body you plan to live in for a
+              while.
             </p>
             <div class="hero-cta reveal reveal-4">
               <a href="#contact" class="btn">Request an intake</a>
@@ -1303,8 +1315,8 @@
     <!-- Scrolling marquee -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>An unhurried practice <em>·</em> Cannabis medicine <em>·</em> Peptide therapy <em>·</em> Longevity work <em>·</em> By appointment <em>·</em> Bondi Beach <em>·</em></span>
-        <span>An unhurried practice <em>·</em> Cannabis medicine <em>·</em> Peptide therapy <em>·</em> Longevity work <em>·</em> By appointment <em>·</em> Bondi Beach <em>·</em></span>
+        <span>An unhurried practice <em>·</em> Functional medicine <em>·</em> Alternative therapy <em>·</em> Root-cause care <em>·</em> By appointment <em>·</em> Bondi Beach <em>·</em></span>
+        <span>An unhurried practice <em>·</em> Functional medicine <em>·</em> Alternative therapy <em>·</em> Root-cause care <em>·</em> By appointment <em>·</em> Bondi Beach <em>·</em></span>
       </div>
     </div>
 
@@ -1341,134 +1353,32 @@
       </div>
     </section>
 
-    <!-- The Doctor -->
-    <section id="doctor" class="doctor">
-      <div class="container doctor-grid">
-        <figure class="doctor-photo">
-          <img
-            src="assets/vin-whatsapp-photos-2026-04-03/vin-2026-04-03-211230-08.jpg"
-            alt="Dr Vinay Patel, standing in a cream fleece against a terracotta wall in Sydney."
-            loading="lazy"
-            width="900"
-            height="1200"
-          />
-          <figcaption>Dr Vinay Patel · Paddington, winter</figcaption>
-        </figure>
-
-        <div class="doctor-body">
-          <span class="kicker">B. The Doctor</span>
-          <h2>Dr Vinay Patel.</h2>
-          <p class="lede">
-            Emergency-trained physician turned medicinal cannabis
-            clinician. Chief Medical Officer at Releaf, Clinical Lead
-            at Candor Medical, and the only doctor you will meet at
-            this clinic.
-          </p>
-          <div class="prose">
-            <p>
-              Vin qualified at the University of Manchester and spent
-              three years inside the NHS before moving to Australia,
-              where he worked two years in Queensland emergency
-              departments, first as a Senior House Officer at Metro
-              North, then as an Emergency Medicine Registrar.
-            </p>
-            <p>
-              Since 2024 he has practised at the front end of Australia&rsquo;s
-              newest category of medicine: first as a telehealth
-              physician in medicinal cannabis, then as Clinical Lead at
-              Candor Medical, and now, alongside his clinic, as Chief
-              Medical Officer at Releaf. He has seen the system at
-              speed, from the resuscitation bay to the script pad, and
-              what he took away is this: no patient has ever been
-              helped by a rushed conversation.
-            </p>
-            <p>
-              He is measured, direct, and genuinely curious about the
-              study before he is curious about the prescription. He
-              reads carefully. He answers questions. He will tell you
-              when he does not know. Outside the clinic he trains as a
-              competitive CrossFit athlete, which is to say he
-              practises what he prescribes, early, and with the bar
-              loaded.
-            </p>
-          </div>
-
-          <dl class="creds" aria-label="Credentials">
-            <div>
-              <dt>Registration</dt>
-              <dd>AHPRA · Medical Practitioner, NSW</dd>
-            </div>
-            <div>
-              <dt>Qualifications</dt>
-              <dd>MBBS, The University of Manchester</dd>
-            </div>
-            <div>
-              <dt>Currently</dt>
-              <dd>
-                CMO, Releaf<br />
-                Clinical Lead, Candor Medical
-              </dd>
-            </div>
-            <div>
-              <dt>Before this</dt>
-              <dd>
-                NHS, United Kingdom<br />
-                Emergency Medicine, Queensland
-              </dd>
-            </div>
-            <div>
-              <dt>Special interest</dt>
-              <dd>Medicinal cannabis, metabolic health, recovery</dd>
-            </div>
-            <div>
-              <dt>Outside the clinic</dt>
-              <dd>Ocean swims, rings, competitive CrossFit</dd>
-            </div>
-          </dl>
-
-          <figure class="doctor-inset">
-            <img
-              src="assets/vin-whatsapp-photos-2026-04-03/vin-2026-04-03-211230-01.jpg"
-              alt="Dr Patel on a bamboo bench with his two dachshunds, Bambi and Tinkerbell."
-              loading="lazy"
-              width="900"
-              height="1200"
-            />
-            <figcaption>
-              <span>The nurse practitioners.</span>
-              Bambi handles intake. Tinkerbell handles the rest.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
     <!-- Services -->
     <section id="services" class="services">
       <div class="container">
         <div class="services-head">
           <div class="col-label">
-            <span class="kicker">C. Services</span>
+            <span class="kicker">B. Services</span>
           </div>
           <div>
             <h2>Bespoke treatment.</h2>
-            <p>No upsells, no packages. Each is a full conversation, prescribed only where it fits. Three below sit at the centre of the practice. The rest are common enough to warrant naming.</p>
+            <p>No upsells, no packages. Each is a full conversation, grounded in functional medicine and ordered only where clinically appropriate. Three below sit at the centre of the practice. The rest are common enough to warrant naming.</p>
           </div>
         </div>
 
         <article class="service service-01">
           <div class="service-num">
             <span class="n">01</span>
-            <span class="chip">Compounded, prescribed</span>
+            <span class="chip">Individualised, clinical</span>
           </div>
           <div>
             <h3>Muscle Health</h3>
             <p>
               For people who train like they mean it, and want their
-              medicine to match. Where clinically appropriate,
-              individually compounded therapeutics are sourced through
-              licensed Australian compounding pharmacies and monitored
-              with the same discipline you bring to your programming.
+              medicine to match. Structured assessment of connective
+              tissue, joint health, and recovery, with a plan
+              individualised to your history, your labs, and the
+              discipline you already bring to your programming.
             </p>
           </div>
           <ul class="service-tags" aria-label="Areas of clinical practice">
@@ -1476,7 +1386,7 @@
             <li>Joint health</li>
             <li>Soft-tissue recovery</li>
             <li>Training support</li>
-            <li>Compounded therapeutics</li>
+            <li>Individualised plans</li>
           </ul>
         </article>
 
@@ -1486,13 +1396,13 @@
             <span class="chip">Quarterly, measured</span>
           </div>
           <div>
-            <h3>Longevity</h3>
+            <h3>Functional Health</h3>
             <p>
-              A thirty-year game played in quarterly increments.
-              Comprehensive bloods, continuous glucose data, body
-              composition, aerobic capacity, sleep architecture, and a
-              written plan that evolves with your life rather than
-              against it.
+              A functional-medicine approach played in quarterly
+              increments. Comprehensive bloods, continuous glucose
+              data, body composition, aerobic capacity, sleep
+              architecture, and a written plan that evolves with your
+              life rather than against it.
             </p>
           </div>
           <ul class="service-tags" aria-label="What is measured">
@@ -1508,21 +1418,23 @@
         <article class="service service-03">
           <div class="service-num">
             <span class="n">03</span>
-            <span class="chip">Via regulated TGA pathways</span>
+            <span class="chip">Considered, clinical</span>
           </div>
           <div>
             <h3>Alternative Therapy</h3>
             <p>
-              Assessment and ongoing care under the TGA&rsquo;s
-              prescriber frameworks, the Special Access Scheme and the
-              Authorised Prescriber pathway. Every case is considered
-              on its own merits, your history, what you have tried,
-              and whether the clinical criteria for access are met.
+              For patients whose story has not been fully answered by
+              conventional care. Assessment is thorough and
+              unhurried, every case considered on its own merits,
+              your history, what you have tried, and what a
+              functional-medicine lens can add. Any therapy is
+              considered only where clinically appropriate and within
+              Australian regulatory frameworks.
             </p>
           </div>
           <ul class="service-tags" aria-label="Areas of clinical practice">
-            <li>Eligibility assessment</li>
-            <li>TGA pathways</li>
+            <li>Root-cause assessment</li>
+            <li>Functional-medicine lens</li>
             <li>Ongoing monitoring</li>
             <li>Structured review</li>
           </ul>
@@ -1627,15 +1539,98 @@
       </div>
     </section>
 
-    <!-- Field image break -->
-    <section class="field" aria-label="Dr Patel in practice.">
-      <img
-        class="field-img"
-        src="assets/vin-whatsapp-photos-2026-04-03/vin-2026-04-03-211230-06.jpg"
-        alt="Dr Patel in a side-angle yoga posture, on a wooden floor against a sage wall."
-        loading="lazy"
-      />
-      <span class="cap">Practice, not preach · Bondi</span>
+    <!-- The Doctor -->
+    <section id="doctor" class="doctor">
+      <div class="container doctor-grid">
+        <figure class="doctor-photo">
+          <img
+            src="assets/vin-whatsapp-photos-2026-04-03/vin-2026-04-03-211230-08.jpg"
+            alt="Dr Vinay Patel, standing in a cream fleece against a terracotta wall in Sydney."
+            loading="lazy"
+            width="900"
+            height="1200"
+          />
+          <figcaption>Dr Vinay Patel · Paddington, winter</figcaption>
+        </figure>
+
+        <div class="doctor-body">
+          <span class="kicker">C. The Doctor</span>
+          <h2>Dr Vinay Patel.</h2>
+          <p class="lede">
+            Emergency-trained physician turned functional and
+            integrative medicine clinician &mdash; and the only doctor
+            you&rsquo;ll meet at this clinic.
+          </p>
+          <div class="prose">
+            <p>
+              Vin qualified at the University of Manchester and spent
+              three years inside the NHS before moving to Australia,
+              where he worked two years in emergency departments
+              across QLD and NSW.
+            </p>
+            <p>
+              Since 2024 he has practised primarily via telehealth,
+              with a clinical focus on functional and integrative
+              medicine, root-cause assessment, and metabolic health.
+              He has seen the system at speed, from the resuscitation
+              bay to the script pad, and what he took away is this:
+              no patient has ever been helped by a rushed
+              conversation.
+            </p>
+            <p>
+              He is measured, direct, and genuinely curious about the
+              study before he is curious about the prescription. He
+              reads carefully. He answers questions. He will tell you
+              when he does not know. Outside the clinic he trains as a
+              CrossFit athlete &mdash; which is to say he practises
+              what he prescribes, early, and with the bar loaded.
+            </p>
+          </div>
+
+          <dl class="creds" aria-label="Credentials">
+            <div>
+              <dt>Registration</dt>
+              <dd>AHPRA · Medical Practitioner, NSW</dd>
+            </div>
+            <div>
+              <dt>Qualifications</dt>
+              <dd>MBChB, The University of Manchester</dd>
+            </div>
+            <div>
+              <dt>Before this</dt>
+              <dd>
+                NHS, United Kingdom<br />
+                Emergency Medicine, Queensland
+              </dd>
+            </div>
+            <div>
+              <dt>Special interest</dt>
+              <dd>Functional medicine, metabolic health, recovery</dd>
+            </div>
+            <div>
+              <dt>Outside the clinic</dt>
+              <dd>
+                Ocean swims, rings, competitive CrossFit, making
+                friends with dogs
+              </dd>
+            </div>
+          </dl>
+
+          <figure class="doctor-inset">
+            <img
+              src="assets/vin-whatsapp-photos-2026-04-03/vin-2026-04-03-211230-01.jpg"
+              alt="Dr Patel on a bamboo bench with his two dachshunds, Bambi and Tinkerbell."
+              loading="lazy"
+              width="900"
+              height="1200"
+            />
+            <figcaption>
+              <span>The nurse practitioners.</span>
+              Bambi handles intake. Tinkerbell handles the rest.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
     </section>
 
     <!-- Approach -->
@@ -1674,6 +1669,17 @@
           </li>
         </ol>
       </div>
+    </section>
+
+    <!-- Field image break -->
+    <section class="field" aria-label="Dr Patel in practice.">
+      <img
+        class="field-img"
+        src="assets/vin-whatsapp-photos-2026-04-03/vin-2026-04-03-211230-06.jpg"
+        alt="Dr Patel in a side-angle yoga posture, on a wooden floor against a sage wall."
+        loading="lazy"
+      />
+      <span class="cap">Practice, not preach · Bondi</span>
     </section>
 
     <!-- Pull quote -->
@@ -1746,8 +1752,8 @@
           <nav class="foot-nav" aria-label="Footer">
             <span class="foot-nav-head">The clinic</span>
             <a href="#practice">Practice</a>
-            <a href="#doctor">The doctor</a>
             <a href="#services">Services</a>
+            <a href="#doctor">The doctor</a>
             <a href="#approach">Approach</a>
             <a href="#contact">Contact</a>
             <span class="foot-nav-head">Legal</span>
@@ -1757,11 +1763,10 @@
           </nav>
           <p class="foot-disc">
             Dr Vinay Patel is an AHPRA-registered medical practitioner
-            in New South Wales. Medicinal cannabis is prescribed under
-            the TGA Special Access Scheme and Authorised Prescriber
-            framework, and compounded therapeutics are dispensed only
-            through licensed Australian compounding pharmacies, in
-            every case where clinically appropriate. Nothing on this
+            in New South Wales. Any prescription-only therapy is
+            considered on an individual basis and provided within the
+            Australian regulatory frameworks administered by the
+            Therapeutic Goods Administration (TGA). Nothing on this
             page is medical advice, a diagnosis, or a therapeutic
             claim. Information here is general in nature. Speak with
             Dr Patel during intake.
