@@ -448,9 +448,53 @@
       }
       @media (min-width: 900px) {
         .practice-grid {
-          grid-template-columns: 240px 1fr;
-          gap: var(--s-8);
+          grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+          column-gap: var(--s-8);
+          align-items: stretch;
         }
+      }
+      .practice-photo {
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+        border-radius: 6px;
+        background: var(--paper-deep);
+        max-width: 480px;
+      }
+      .practice-photo img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: saturate(0.96) contrast(1.02);
+      }
+      @media (min-width: 900px) {
+        .practice-photo {
+          max-width: none;
+          height: 100%;
+          min-height: 0;
+        }
+        .practice-photo img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center 28%;
+        }
+      }
+      .practice-photo figcaption {
+        position: absolute;
+        left: 14px;
+        bottom: 12px;
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: color-mix(in oklch, var(--paper) 94%, transparent);
+        padding: 6px 10px;
+        background: color-mix(in oklch, var(--ink) 55%, transparent);
+        backdrop-filter: blur(3px);
+        border-radius: 2px;
       }
       .col-label {
         display: flex;
@@ -1323,10 +1367,17 @@
     <!-- The Practice -->
     <section id="practice" class="practice">
       <div class="container practice-grid">
-        <div class="col-label">
-          <span class="label">The Practice</span>
-        </div>
-        <div>
+        <figure class="practice-photo">
+          <img
+            src="assets/vin-whatsapp-photos-2026-04-22/vin-2026-04-22-harbour.jpg"
+            alt="Dr Vinay Patel on Sydney Harbour, Opera House and Harbour Bridge behind him."
+            loading="lazy"
+            width="853"
+            height="1280"
+          />
+          <figcaption>Dr Vin</figcaption>
+        </figure>
+        <div class="practice-copy">
           <h2>A small clinic, patient by design.</h2>
           <div class="prose">
             <p>
@@ -1549,7 +1600,7 @@
             width="900"
             height="1200"
           />
-          <figcaption>Dr Vinay Patel · Paddington, winter</figcaption>
+          <figcaption>Manchester → Sydney</figcaption>
         </figure>
 
         <div class="doctor-body">
