@@ -777,6 +777,115 @@
       .service-03 .service-num .n    { color: var(--sage); }
       .service-03 .service-num .chip { color: oklch(0.44 0.06 150); }
 
+      /* Compact services — an index of adjacent care */
+      .services-more {
+        margin-top: var(--s-9);
+        padding-top: var(--s-7);
+        border-top: 1px solid var(--line);
+      }
+      .services-more-head {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--s-4);
+        margin-bottom: var(--s-6);
+      }
+      @media (min-width: 900px) {
+        .services-more-head {
+          grid-template-columns: 240px 1fr;
+          gap: var(--s-8);
+          align-items: baseline;
+        }
+      }
+      .services-more-head p {
+        font-size: var(--text-base);
+        color: var(--ink-muted);
+        max-width: 52ch;
+      }
+      .services-more-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: var(--s-8);
+      }
+      @media (min-width: 720px) {
+        .services-more-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .service-compact {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--s-3);
+        padding-block: var(--s-6);
+        border-top: 1px solid var(--line-soft);
+      }
+      @media (min-width: 720px) {
+        /* Hide the top border on the 2nd card of each row so it aligns */
+        .service-compact:nth-child(2),
+        .service-compact:nth-child(2) ~ .service-compact {
+          /* keep rules on all cards; the grid renders a clean row */
+        }
+      }
+      .service-compact-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--s-4);
+      }
+      .service-compact .n {
+        font-family: var(--display);
+        font-size: 1.9rem;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+      .service-compact .chip {
+        font-family: var(--mono);
+        font-size: 0.64rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ink-muted);
+        padding: 4px 10px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+      .service-compact h3 {
+        font-family: var(--display);
+        font-size: 1.55rem;
+        line-height: 1.1;
+        letter-spacing: -0.015em;
+        margin-top: 2px;
+      }
+      .service-compact p {
+        font-size: 0.98rem;
+        line-height: 1.55;
+        color: var(--ink-muted);
+        max-width: 44ch;
+      }
+      .service-compact-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: var(--s-2);
+      }
+      .service-compact-tags li {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.06em;
+        padding: 4px 9px;
+        background: var(--paper-deep);
+        border: 1px solid var(--line-soft);
+        border-radius: 3px;
+        color: var(--ink-muted);
+      }
+
+      /* Subtle tonal accents on compact numbers — each distinct from its neighbours */
+      .service-04 .n { color: oklch(0.52 0.1 45); }   /* sienna */
+      .service-05 .n { color: oklch(0.52 0.07 150); } /* sage */
+      .service-06 .n { color: oklch(0.48 0.09 230); } /* dusk blue */
+      .service-07 .n { color: oklch(0.48 0.09 355); } /* rose plum */
+
       .service h3 {
         font-family: var(--display);
         font-size: var(--text-2xl);
@@ -1057,6 +1166,15 @@
         transition: color 160ms ease;
       }
       .foot-nav a:hover { color: var(--paper); }
+      .foot-nav .foot-nav-head {
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: color-mix(in oklch, var(--paper) 58%, transparent);
+        margin-top: var(--s-4);
+      }
+      .foot-nav .foot-nav-head:first-child { margin-top: 0; }
       .foot-disc {
         font-size: 0.85rem;
         line-height: 1.55;
@@ -1333,82 +1451,179 @@
             <span class="kicker">C. Services</span>
           </div>
           <div>
-            <h2>Three quiet specialties.</h2>
-            <p>No upsells, no packages. Each of these is a full conversation, prescribed only where it fits.</p>
+            <h2>Bespoke treatment.</h2>
+            <p>No upsells, no packages. Each is a full conversation, prescribed only where it fits. Three below sit at the centre of the practice. The rest are common enough to warrant naming.</p>
           </div>
         </div>
 
         <article class="service service-01">
           <div class="service-num">
             <span class="n">01</span>
-            <span class="chip">TGA pathways</span>
+            <span class="chip">Compounded, prescribed</span>
           </div>
           <div>
-            <h3>Medicinal Cannabis</h3>
+            <h3>Muscle Health</h3>
             <p>
-              Assessment and ongoing care for patients who may benefit
-              from medicinal cannabis, accessed within the TGA&rsquo;s
-              Special Access Scheme and, where appropriate, the
-              Authorised Prescriber framework. Every case is considered
-              on its own merits.
+              For people who train like they mean it, and want their
+              medicine to match. Where clinically appropriate,
+              individually compounded therapeutics are sourced through
+              licensed Australian compounding pharmacies and monitored
+              with the same discipline you bring to your programming.
             </p>
           </div>
           <ul class="service-tags" aria-label="Areas of clinical practice">
-            <li>Sleep</li>
-            <li>Chronic pain</li>
-            <li>Anxiety</li>
-            <li>Palliative support</li>
-            <li>PTSD</li>
+            <li>Connective tissue</li>
+            <li>Joint health</li>
+            <li>Soft-tissue recovery</li>
+            <li>Training support</li>
+            <li>Compounded therapeutics</li>
           </ul>
         </article>
 
         <article class="service service-02">
           <div class="service-num">
             <span class="n">02</span>
-            <span class="chip">Compounded, individualised</span>
+            <span class="chip">Quarterly, measured</span>
           </div>
           <div>
-            <h3>Compounded Therapeutics</h3>
+            <h3>Longevity</h3>
             <p>
-              Where clinical judgement and the evidence support it,
-              individually compounded therapies sourced through
-              licensed Australian compounding pharmacies and tailored
-              to the patient in front of us. No catalog, no shelf, no
-              upsell.
+              A thirty-year game played in quarterly increments.
+              Comprehensive bloods, continuous glucose data, body
+              composition, aerobic capacity, sleep architecture, and a
+              written plan that evolves with your life rather than
+              against it.
             </p>
           </div>
-          <ul class="service-tags" aria-label="Areas of interest">
-            <li>Recovery</li>
-            <li>Connective tissue</li>
-            <li>Metabolic</li>
-            <li>Skin</li>
-            <li>Hair</li>
+          <ul class="service-tags" aria-label="What is measured">
+            <li>Full panel bloods</li>
+            <li>CGM</li>
+            <li>DEXA</li>
+            <li>VO₂ max</li>
+            <li>Sleep architecture</li>
+            <li>Quarterly review</li>
           </ul>
         </article>
 
         <article class="service service-03">
           <div class="service-num">
             <span class="n">03</span>
-            <span class="chip">Quarterly, measured</span>
+            <span class="chip">Via regulated TGA pathways</span>
           </div>
           <div>
-            <h3>Metabolic &amp; Longevity</h3>
+            <h3>Alternative Therapy</h3>
             <p>
-              Comprehensive labs, continuous glucose monitoring, body
-              composition, aerobic capacity, and a plan you will
-              actually follow. Quarterly reviews. No crash weeks. We
-              are playing a thirty-year game, not a thirty-day one.
+              Assessment and ongoing care under the TGA&rsquo;s
+              prescriber frameworks, the Special Access Scheme and the
+              Authorised Prescriber pathway. Every case is considered
+              on its own merits, your history, what you have tried,
+              and whether the clinical criteria for access are met.
             </p>
           </div>
-          <ul class="service-tags" aria-label="What is measured">
-            <li>Full panel labs</li>
-            <li>CGM</li>
-            <li>DEXA / VO2</li>
-            <li>Sleep architecture</li>
-            <li>Nutrition</li>
-            <li>Training</li>
+          <ul class="service-tags" aria-label="Areas of clinical practice">
+            <li>Eligibility assessment</li>
+            <li>TGA pathways</li>
+            <li>Ongoing monitoring</li>
+            <li>Structured review</li>
           </ul>
         </article>
+
+        <!-- Adjacent services — compact grid -->
+        <div class="services-more">
+          <div class="services-more-head">
+            <div class="col-label">
+              <span class="kicker">Also consulting on</span>
+            </div>
+            <p>Adjacent concerns that show up often in intake. Same workup, same honesty, same care for what the evidence does and does not say.</p>
+          </div>
+
+          <div class="services-more-grid">
+            <article class="service-compact service-04">
+              <div class="service-compact-top">
+                <span class="n">04</span>
+                <span class="chip">Honest, clinical</span>
+              </div>
+              <h3>Men&rsquo;s Health</h3>
+              <p>
+                Hair thinning faster than expected, energy that dropped
+                and never came back, a body that quietly stopped
+                cooperating. Medical problems that respond well to a
+                proper workup, not character flaws.
+              </p>
+              <ul class="service-compact-tags" aria-label="Areas of clinical practice">
+                <li>Hair loss</li>
+                <li>Hormonal assessment</li>
+                <li>Energy</li>
+                <li>Mood</li>
+                <li>Ongoing management</li>
+              </ul>
+            </article>
+
+            <article class="service-compact service-05">
+              <div class="service-compact-top">
+                <span class="n">05</span>
+                <span class="chip">Medically supervised</span>
+              </div>
+              <h3>Weight Management</h3>
+              <p>
+                Composition that will not shift, a metabolism that
+                stalled somewhere around thirty-five, appetite signals
+                that stopped making sense. Structured, with bloods
+                first and tools matched to the patient rather than the
+                marketing.
+              </p>
+              <ul class="service-compact-tags" aria-label="Areas of clinical practice">
+                <li>Metabolic health</li>
+                <li>Body composition</li>
+                <li>Appetite regulation</li>
+                <li>CGM</li>
+                <li>Ongoing monitoring</li>
+              </ul>
+            </article>
+
+            <article class="service-compact service-06">
+              <div class="service-compact-top">
+                <span class="n">06</span>
+                <span class="chip">Measured, not guessed</span>
+              </div>
+              <h3>Sleep</h3>
+              <p>
+                You already know you are not sleeping well. We measure
+                what is actually happening, assess what is driving the
+                disruption, and build a plan around the findings, no
+                pamphlets on sleep hygiene.
+              </p>
+              <ul class="service-compact-tags" aria-label="Areas of clinical practice">
+                <li>Architecture</li>
+                <li>Circadian rhythm</li>
+                <li>Recovery</li>
+                <li>Hormonal impact</li>
+              </ul>
+            </article>
+
+            <article class="service-compact service-07">
+              <div class="service-compact-top">
+                <span class="n">07</span>
+                <span class="chip">Frank, confidential</span>
+              </div>
+              <h3>Sexual Health</h3>
+              <p>
+                Erectile function that has changed, libido that
+                quietly disappeared, performance that is not what it
+                was. Judgment-free and clinically thorough, proper
+                history, the right bloods, and the options the
+                evidence actually supports.
+              </p>
+              <ul class="service-compact-tags" aria-label="Areas of clinical practice">
+                <li>Erectile function</li>
+                <li>Libido</li>
+                <li>Hormonal assessment</li>
+                <li>Cardiovascular screening</li>
+                <li>Confidential</li>
+              </ul>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1529,11 +1744,16 @@
             </div>
           </div>
           <nav class="foot-nav" aria-label="Footer">
+            <span class="foot-nav-head">The clinic</span>
             <a href="#practice">Practice</a>
             <a href="#doctor">The doctor</a>
             <a href="#services">Services</a>
             <a href="#approach">Approach</a>
             <a href="#contact">Contact</a>
+            <span class="foot-nav-head">Legal</span>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="refund-policy.html">Cancellation &amp; Refunds</a>
           </nav>
           <p class="foot-disc">
             Dr Vinay Patel is an AHPRA-registered medical practitioner
