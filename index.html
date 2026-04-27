@@ -329,15 +329,22 @@
         border: 1px solid var(--line);
         border-radius: 6px;
         overflow: hidden;
+        background: oklch(0.94 0.035 82);
+      }
+      .horizon::after {
+        /* Sea layer, painted over the sun so it reads as rising/setting */
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 42%;
         background: linear-gradient(
           to bottom,
-          oklch(0.94 0.035 82) 0%,
-          oklch(0.94 0.035 82) 58%,
-          var(--ocean) 58%,
+          var(--ocean) 0%,
           var(--ocean-deep) 100%
         );
-        /* NOTE: not a decorative gradient on content — this is a flat two-block
-           sky/sea illustration rendered as a single image via a hard-stop gradient. */
+        z-index: 2;
       }
       @media (min-width: 960px) {
         .horizon { min-height: 560px; }
@@ -353,19 +360,7 @@
         border-radius: 999px;
         box-shadow:
           0 0 0 1px color-mix(in oklch, var(--sun) 70%, var(--ocean-deep));
-      }
-      .horizon .sun::after {
-        /* faint reflection band on the water */
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 100%;
-        transform: translateX(-50%);
-        width: 22%;
-        height: clamp(80px, 18vh, 180px);
-        background: color-mix(in oklch, var(--sun) 55%, transparent);
-        filter: blur(1px);
-        border-radius: 2px;
+        z-index: 1;
       }
       .horizon .tag {
         position: absolute;
@@ -379,6 +374,7 @@
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: oklch(0.3 0.03 220);
+        z-index: 3;
       }
       .horizon .tag span:last-child { opacity: 0.7; letter-spacing: 0.08em; }
       .horizon .tag-r {
@@ -390,6 +386,7 @@
         letter-spacing: 0.16em;
         text-transform: uppercase;
         color: color-mix(in oklch, var(--paper) 90%, var(--ocean));
+        z-index: 3;
       }
 
       /* -------------------------------------------------------------
