@@ -228,6 +228,13 @@
         transition: background 180ms ease, color 180ms ease, transform 220ms cubic-bezier(0.2,0.8,0.2,1);
       }
       .btn:hover { background: var(--ocean-deep); border-color: var(--ocean-deep); transform: translateY(-1px); }
+      .btn-outline { background: transparent; color: var(--ink); }
+      .btn-outline:hover { background: transparent; border-color: var(--ocean-deep); color: var(--ocean-deep); }
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: var(--s-3);
+      }
       .btn-ghost {
         display: inline-flex;
         align-items: center;
@@ -1284,6 +1291,12 @@
         .nav-inner { grid-template-columns: 1fr auto; }
         .brand-sub { display: none; }
         .btn { padding: 10px 14px; font-size: 0.82rem; }
+        .nav-inner { gap: var(--s-3); }
+        .nav-cta { gap: var(--s-2); }
+        .nav-cta .btn { white-space: nowrap; }
+      }
+      @media (max-width: 480px) {
+        .nav-cta .btn-outline { display: none; }
         .hero-meta { flex-wrap: wrap; }
         h1.hero-title { max-width: none; letter-spacing: -0.02em; }
         .service-num .n { font-size: 3.25rem; }
@@ -1307,7 +1320,10 @@
           <a href="#doctor">The doctor</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a href="#contact" class="btn">Request intake →</a>
+        <div class="nav-cta">
+          <a href="#contact" class="btn btn-outline">Request intake →</a>
+          <a href="/book" class="btn">Book now</a>
+        </div>
       </div>
     </header>
 
@@ -1334,6 +1350,7 @@
               architecture of a body you plan to live in for a while.
             </p>
             <div class="hero-cta reveal reveal-4">
+              <a href="/book" class="btn">Book now</a>
               <a href="#contact" class="btn">Request an intake</a>
               <a href="#services" class="btn-ghost">See the practice <span aria-hidden="true">↓</span></a>
             </div>
@@ -1776,6 +1793,9 @@
             <a href="mailto:dr@vins.clinic" class="btn" style="width: 100%; justify-content: center;">
               Write to Vin
             </a>
+            <a href="/book" class="btn" style="width: 100%; justify-content: center; margin-top: var(--s-3);">
+              Book now
+            </a>
           </div>
         </div>
       </div>
@@ -1802,6 +1822,7 @@
             <a href="privacy-policy.html">Privacy Policy</a>
             <a href="terms-of-service.html">Terms of Service</a>
             <a href="refund-policy.html">Cancellation &amp; Refunds</a>
+            <a href="/review">Leave a Google review</a>
           </nav>
           <p class="foot-disc">
             Dr Vinay Patel is an AHPRA-registered medical practitioner
