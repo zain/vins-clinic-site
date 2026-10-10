@@ -421,6 +421,8 @@ footer {
 }
 @media (max-width: 480px) {
   .nav-back { display: none; }
+  .nav-inner { grid-template-columns: 1fr auto; gap: var(--s-3); }
+  .nav-inner > span[aria-hidden="true"] { display: none; }
   .btn { padding: 10px 14px; font-size: 0.82rem; }
 }
 @media (max-width: 640px) {

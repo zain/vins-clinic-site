@@ -235,6 +235,7 @@
         align-items: center;
         gap: var(--s-3);
       }
+      .nav-cta .btn, .nav-links a { white-space: nowrap; }
       .btn-ghost {
         display: inline-flex;
         align-items: center;
@@ -1293,15 +1294,18 @@
         .btn { padding: 10px 14px; font-size: 0.82rem; }
         .nav-inner { gap: var(--s-3); }
         .nav-cta { gap: var(--s-2); }
-        .nav-cta .btn { white-space: nowrap; }
-      }
-      @media (max-width: 480px) {
-        .nav-cta .btn-outline { display: none; }
         .hero-meta { flex-wrap: wrap; }
         h1.hero-title { max-width: none; letter-spacing: -0.02em; }
         .service-num .n { font-size: 3.25rem; }
         .contact-card .row { grid-template-columns: 88px 1fr; }
         .contact-card .corner { width: 100px; height: 100px; right: -40px; bottom: -40px; }
+      }
+      @media (max-width: 960px) {
+        .nav-cta .btn-outline { display: none; }
+        .nav-links { gap: var(--s-5); }
+      }
+      @media (max-width: 800px) {
+        .brand-sub { display: none; }
       }
     </style>
   </head>
@@ -1322,7 +1326,7 @@
         </nav>
         <div class="nav-cta">
           <a href="#contact" class="btn btn-outline">Request intake →</a>
-          <a href="/book" class="btn">Book now</a>
+          <a href="/book" class="btn">Book a consult</a>
         </div>
       </div>
     </header>
@@ -1350,8 +1354,8 @@
               architecture of a body you plan to live in for a while.
             </p>
             <div class="hero-cta reveal reveal-4">
-              <a href="/book" class="btn">Book now</a>
-              <a href="#contact" class="btn">Request an intake</a>
+              <a href="/book" class="btn">Book a consult</a>
+              <a href="#contact" class="btn btn-outline">Request an intake</a>
               <a href="#services" class="btn-ghost">See the practice <span aria-hidden="true">↓</span></a>
             </div>
           </div>
@@ -1792,9 +1796,6 @@
             </dl>
             <a href="mailto:dr@vins.clinic" class="btn" style="width: 100%; justify-content: center;">
               Write to Vin
-            </a>
-            <a href="/book" class="btn" style="width: 100%; justify-content: center; margin-top: var(--s-3);">
-              Book now
             </a>
           </div>
         </div>
